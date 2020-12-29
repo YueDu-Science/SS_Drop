@@ -2642,8 +2642,10 @@ function SS_Prac_PostTrialRoutineEachFrame(trials) {
       psychoJS.window.callOnFlip(function(){ Sound_SS_Prac_PostTrial.play(); });  // screen flip
       Sound_SS_Prac_PostTrial.status = PsychoJS.Status.STARTED;
     }
-    if (t >= (Sound_SS_Prac_PostTrial.getDuration() + Sound_SS_Prac_PostTrial.tStart)     && Sound_SS_Prac_PostTrial.status === PsychoJS.Status.STARTED) {
-      Sound_SS_Prac_PostTrial.stop();  // stop the sound (if longer than duration)
+
+    frameRemains = dur_feedback  - psychoJS.window.monitorFramePeriod * 0.75;
+    if (t >= frameRemains && Sound_SS_Prac_PostTrial.status === PsychoJS.Status.STARTED) {
+      //Sound_SS_Prac_PostTrial.stop();  // stop the sound (if longer than duration)
       Sound_SS_Prac_PostTrial.status = PsychoJS.Status.FINISHED;
     }
     
@@ -2741,7 +2743,7 @@ function SS_Prac_PostTrialRoutineEnd(trials) {
         thisComponent.setAutoDraw(false);
       }
     }
-    Sound_SS_Prac_PostTrial.stop();  // ensure sound has stopped at end of routine
+    //Sound_SS_Prac_PostTrial.stop();  // ensure sound has stopped at end of routine
     // the Routine "SS_Prac_PostTrial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -3680,8 +3682,10 @@ function SS_PostTrialRoutineEachFrame(trials) {
       psychoJS.window.callOnFlip(function(){ Sound_SS_PostTrial.play(); });  // screen flip
       Sound_SS_PostTrial.status = PsychoJS.Status.STARTED;
     }
-    if (t >= (Sound_SS_PostTrial.getDuration() + Sound_SS_PostTrial.tStart)     && Sound_SS_PostTrial.status === PsychoJS.Status.STARTED) {
-      Sound_SS_PostTrial.stop();  // stop the sound (if longer than duration)
+
+    frameRemains = dur_feedback  - psychoJS.window.monitorFramePeriod * 0.75;
+    if (t >= frameRemains && Sound_SS_PostTrial.status === PsychoJS.Status.STARTED) {
+      //Sound_SS_PostTrial.stop();  // stop the sound (if longer than duration)
       Sound_SS_PostTrial.status = PsychoJS.Status.FINISHED;
     }
     
@@ -3765,7 +3769,7 @@ function SS_PostTrialRoutineEnd(trials) {
         thisComponent.setAutoDraw(false);
       }
     }
-    Sound_SS_PostTrial.stop();  // ensure sound has stopped at end of routine
+    //Sound_SS_PostTrial.stop();  // ensure sound has stopped at end of routine
     // the Routine "SS_PostTrial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
