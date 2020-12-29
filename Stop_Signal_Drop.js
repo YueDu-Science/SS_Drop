@@ -220,7 +220,7 @@ function experimentInit() {
   block_count = 1;
   t_pretrial = 0.6;
   y_ball = 0.4;
-  y_line = (- 0.3);
+  y_line = 0;
   t_max = 0.5;
   ball_opacity = [];
   timing_tol = 0.03;
@@ -1896,7 +1896,7 @@ function SS_Instr_MainTrialRoutineEachFrame(trials) {
     } else {
         ball_color = change_color;
     }
-    if (((trial_count_instr >= 11) && (Resp_SS_Instr_MainTrial.keys.length !== 0))) {
+    if (((trial_count_instr >= 11) && (Resp_SS_Instr_MainTrial.keys !== undefined))) {
       trials.finished =  true;
     }
     
@@ -2518,7 +2518,7 @@ function SS_Prac_MainTrialRoutineEnd(trials) {
         thisComponent.setAutoDraw(false);
       }
     }
-    if ((Resp_SS_Prac_MainTrial.keys.length === 0)) {
+    if ((Resp_SS_Prac_MainTrial.keys === undefined)) {
         rt = 99;
         ball_opa = 0;
         press = [];
@@ -3553,7 +3553,7 @@ function SS_MainTrialRoutineEnd(trials) {
         thisComponent.setAutoDraw(false);
       }
     }
-    if ((Resp_SS_MainTrial.keys.length === 0)) {
+    if ((Resp_SS_MainTrial.keys === undefined)) {
         rt = 99;
         ball_opa = 0;
         press = [];
@@ -3759,7 +3759,6 @@ function SS_PostTrialRoutineEachFrame(trials) {
     }
   };
 }
-
 
 function SS_PostTrialRoutineEnd(trials) {
   return function () {
