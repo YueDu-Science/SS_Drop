@@ -141,7 +141,7 @@ var dt_interval;
 var dt_ind;
 var rng1
 var rng2
-
+var circle_opacity = 0.5
 var Instr_ExpClock;
 var Instr_Exp_Text;
 var Instr_Exp_Key;
@@ -1609,6 +1609,7 @@ function SS_Instr_PreTrialRoutineBegin(trials) {
     Line_SS_Instr_PreTrial.setFillColor(new util.Color(line_col));
     Line_SS_Instr_PreTrial.setLineColor(new util.Color(line_col));
     Line_SS_Instr_PreTrial.setLineWidth(line_wd);
+    Circle_SS_Instr_PreTrial.setOplacity(circle_opacity)
     Circle_SS_Instr_PreTrial.setPos([0, y_ball]);
     Circle_SS_Instr_PreTrial.setSize([size_ball, size_ball]);
     Circle_SS_Instr_PreTrial.setLineColor(new util.Color(ball_color));
@@ -1720,7 +1721,6 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
     console.log(size_ball_pretrial)
     if (Ball_SS_Instr_PreTrial.status === PsychoJS.Status.STARTED){ // only update if being drawn
       Ball_SS_Instr_PreTrial.setSize([(0 + ((size_ball / t_pretrial) * t)), (0 + ((size_ball / t_pretrial) * t))]);
-      Ball_SS_Instr_PreTrial.refresh()
     }
 
     // *Text_1_SS_Instr_PreTrial* updates
