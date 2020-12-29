@@ -3284,9 +3284,6 @@ function SS_PreTrialRoutineBegin(trials) {
             ct = (t_max - dt);
         }
     }
-
-    console.log(dt)
-    
     ball_color = default_color;
     
     Line_SS_PreTrial.setPos([0, y_line]);
