@@ -133,6 +133,7 @@ var num_trial_prac;
 var num_prac_crit;
 var num_block;
 var num_trial;
+var sample_num;
 var StimList;
 var dt_range;
 var dt_interval;
@@ -263,8 +264,12 @@ function experimentInit() {
   dt_ind = [];
   dt_interval = [[dt_range[0], 0.125], [0.125, 0.2], [0.2, 0.275], [0.275, 0.35], [0.35, 0.425], [0.425, dt_range[1]], [(- 98.5), (- 98.5)]];
   // prob = [0.1, 0.2, 0.2, 0.2, 0.2, 0.1];
-  // num = [3, 6, 6, 6, 6, 3, 70];
-  dt_ind = ((((((([0] * 3) + ([1] * 6)) + ([2] * 6)) + ([3] * 6)) + ([4] * 6)) + ([5] * 3)) + ([6] * 70));
+  sample_num = [3, 6, 6, 6, 6, 3, 70];
+  for (var i = 0; i<sample_num.length; ++i) {
+    let LEN = sample_num[i];
+    let tmp = new Array(LEN).fill(i);
+    dt_ind = dt_ind.concat(tmp);
+  }
   util.shuffle(dt_ind);
   
   // Initialize components for Routine "Instr_Exp"
@@ -446,7 +451,7 @@ function experimentInit() {
   Text_SS_Prac_CountDown = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_SS_Prac_CountDown',
-    text: 'default text',
+    text: undefined,
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.2,  wrapWidth: undefined, ori: 0,
@@ -784,7 +789,7 @@ function experimentInit() {
   Text_SS_CountDown = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_SS_CountDown',
-    text: 'default text',
+    text: undefined,
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.2,  wrapWidth: undefined, ori: 0,
