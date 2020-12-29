@@ -1605,8 +1605,6 @@ function SS_Instr_PreTrialRoutineBegin(trials) {
         ct = (t_max - dt);
     }
 
-    console.log(dt)
-    
     ball_color = default_color;
     
     Line_SS_Instr_PreTrial.setPos([0, y_line]);
@@ -1861,6 +1859,7 @@ function SS_Instr_MainTrialRoutineBegin(trials) {
     Score_SS_Instr_MainTrial.setColor(new util.Color(score_color));
     Score_SS_Instr_MainTrial.setOpacity(score_opa);
     Score_SS_Instr_MainTrial.setText(corr_score);
+    Ball_SS_Instr_MainTrial.setFillColor(new util.Color(ball_color))
     Ball_SS_Instr_MainTrial.setSize([size_ball, size_ball]);
     Ball_SS_Instr_MainTrial.setPos([0, y_ball]);
     Text_1_SS_Instr_MainTrial.setPos([(- 0.3), (y_line + 0.05)]);
@@ -3285,6 +3284,9 @@ function SS_PreTrialRoutineBegin(trials) {
             ct = (t_max - dt);
         }
     }
+
+    console.log(dt)
+    
     ball_color = default_color;
     
     Line_SS_PreTrial.setPos([0, y_line]);
