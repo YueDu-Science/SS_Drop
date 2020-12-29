@@ -1616,6 +1616,7 @@ function SS_Instr_PreTrialRoutineBegin(trials) {
     Score_SS_Intr_PreTrial.setOpacity(score_opa);
     Score_SS_Intr_PreTrial.setText(corr_score);
     Ball_SS_Instr_PreTrial.setPos([0, y_ball]);
+    Ball_SS_Instr_PreTrial.setSize([0, 0]);
     Ball_SS_Instr_PreTrial.setFillColor(new util.Color(ball_color));
     Text_1_SS_Instr_PreTrial.setPos([(- 0.3), (y_line + 0.05)]);
     Text_1_SS_Instr_PreTrial.setText(text1);
@@ -1857,6 +1858,7 @@ function SS_Instr_MainTrialRoutineBegin(trials) {
     Score_SS_Instr_MainTrial.setOpacity(score_opa);
     Score_SS_Instr_MainTrial.setText(corr_score);
     Ball_SS_Instr_MainTrial.setSize([size_ball, size_ball]);
+    Ball_SS_Instr_MainTrial.setPos([0, y_ball]);
     Text_1_SS_Instr_MainTrial.setPos([(- 0.3), (y_line + 0.05)]);
     Text_1_SS_Instr_MainTrial.setText(text1);
     Text_2_SS_Instr_MainTrial.setText(text2);
