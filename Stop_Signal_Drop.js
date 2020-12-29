@@ -1710,15 +1710,17 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
       Ball_SS_Instr_PreTrial.setAutoDraw(true);
     }
 
-    size_ball_pretrial = (0 + ((size_ball / t_pretrial) * t));
-    console.log(size_ball_pretrial)
-    if (Ball_SS_Instr_PreTrial.status === PsychoJS.Status.STARTED){ // only update if being drawn
-      Ball_SS_Instr_PreTrial.setSize([(0 + ((size_ball / t_pretrial) * t)), (0 + ((size_ball / t_pretrial) * t))]);
-    }
     
     frameRemains = t_pretrial  - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (Ball_SS_Instr_PreTrial.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       Ball_SS_Instr_PreTrial.setAutoDraw(false);
+    }
+
+    size_ball_pretrial = (0 + ((size_ball / t_pretrial) * t));
+    console.log(size_ball_pretrial)
+    if (Ball_SS_Instr_PreTrial.status === PsychoJS.Status.STARTED){ // only update if being drawn
+      Ball_SS_Instr_PreTrial.setSize([(0 + ((size_ball / t_pretrial) * t)), (0 + ((size_ball / t_pretrial) * t))]);
+      Ball_SS_Instr_PreTrial.refresh()
     }
 
     // *Text_1_SS_Instr_PreTrial* updates
