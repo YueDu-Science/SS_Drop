@@ -237,7 +237,6 @@ function experimentInit() {
   dur_feedback = 0.5;
   line_wd = 0.5;
   line_col = [1, 1, 1];
-  ball_wd = 0.01;
   sound_vol = 1;
 
   var myrng = new Math.seedrandom(participant);   //use new here so it does not affect Math.random()
@@ -267,8 +266,8 @@ function experimentInit() {
   dt_interval = [];
   dt_ind = [];
   dt_interval = [[dt_range[0], 0.125], [0.125, 0.2], [0.2, 0.275], [0.275, 0.35], [0.35, 0.425], [0.425, dt_range[1]], [(- 98.5), (- 98.5)]];
-  prob = [0.1, 0.2, 0.2, 0.2, 0.2, 0.1];
-  num = [3, 6, 6, 6, 6, 3, 70];
+  // prob = [0.1, 0.2, 0.2, 0.2, 0.2, 0.1];
+  // num = [3, 6, 6, 6, 6, 3, 70];
   dt_ind = ((((((([0] * 3) + ([1] * 6)) + ([2] * 6)) + ([3] * 6)) + ([4] * 6)) + ([5] * 3)) + ([6] * 70));
   util.shuffle(dt_ind);
   
