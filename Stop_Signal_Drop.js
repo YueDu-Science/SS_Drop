@@ -107,7 +107,6 @@ var t_pretrial;
 var y_ball;
 var y_line;
 var t_max;
-var ball_opacity;
 var timing_tol;
 var dist;
 var speed;
@@ -124,9 +123,8 @@ var line_wd;
 var line_col;
 var ball_wd;
 var sound_vol;
-var order;
 var grp;
-var color_rnd;
+var sample_ind
 var go_color;
 var stop_color;
 var ball_pol;
@@ -221,7 +219,6 @@ function experimentInit() {
   y_ball = 0.4;
   y_line = -0.3;
   t_max = 0.5;
-  ball_opacity = [];
   timing_tol = 0.03;
   dist = (y_ball - y_line);
   speed = (dist / t_max);
