@@ -293,7 +293,7 @@ function experimentInit() {
   SS_Instr_PreTrialClock = new util.Clock();
   Line_SS_Instr_PreTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Instr_PreTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -371,7 +371,7 @@ function experimentInit() {
   SS_Instr_MainTrialClock = new util.Clock();
   Line_SS_Instr_MainTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Instr_MainTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -440,7 +440,7 @@ function experimentInit() {
   SS_Prac_CountDownClock = new util.Clock();
   Line_SS_Prac_CountDown = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Prac_CountDown', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -475,7 +475,7 @@ function experimentInit() {
   
   Line_SS_Prac_PreTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Prac_PreTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -518,7 +518,7 @@ function experimentInit() {
   
   Line_SS_Prac_MainTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Prac_MainTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -557,7 +557,7 @@ function experimentInit() {
   Sound_SS_Prac_PostTrial.setVolume(1.0);
   Line_SS_Prac_PostTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Prac_PostTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -615,7 +615,7 @@ function experimentInit() {
   SS_Instr_PreTrialClock = new util.Clock();
   Line_SS_Instr_PreTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Instr_PreTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -693,7 +693,7 @@ function experimentInit() {
   SS_Instr_MainTrialClock = new util.Clock();
   Line_SS_Instr_MainTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Instr_MainTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -778,7 +778,7 @@ function experimentInit() {
   SS_CountDownClock = new util.Clock();
   Line_SS_CountDown = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_CountDown', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -802,7 +802,7 @@ function experimentInit() {
   
   Line_SS_PreTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_PreTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -834,7 +834,7 @@ function experimentInit() {
   
   Line_SS_MainTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_MainTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -862,7 +862,7 @@ function experimentInit() {
   Sound_SS_PostTrial.setVolume(1.0);
   Line_SS_PostTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_PostTrial', units : 'height', 
-    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
+    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
