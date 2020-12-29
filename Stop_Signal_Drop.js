@@ -2771,43 +2771,7 @@ function Instr_SSRoutineBegin(trials) {
     Instr_SSClock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
-    if ((grp === 0)) {
-        if ((block_count <= (num_block / 2))) {
-            default_color = go_color;
-            change_color = stop_color;
-        } else {
-            default_color = stop_color;
-            change_color = go_color;
-        }
-    } else {
-        if ((block_count <= (num_block / 2))) {
-            default_color = stop_color;
-            change_color = go_color;
-        } else {
-            default_color = go_color;
-            change_color = stop_color;
-        }
-    }
-    if ((default_color === [1, 1, 1])) {
-        default_color_text = "WHITE";
-    } else {
-        default_color_text = "BLACK";
-    }
-    if ((change_color === [1, 1, 1])) {
-        change_color_text = "WHITE";
-    } else {
-        change_color_text = "BLACK";
-    }
-    if ((go_color === [1, 1, 1])) {
-        go_color_text = "WHITE";
-    } else {
-        go_color_text = "BLACK";
-    }
-    if ((stop_color === [1, 1, 1])) {
-        stop_color_text = "WHITE";
-    } else {
-        stop_color_text = "BLACK";
-    }
+    
     block_count = 1;
     timing_tol = 0.03;
     $min = (speed * (t_max - timing_tol));
@@ -2936,6 +2900,44 @@ function SS_Instr_Load_InfoRoutineBegin(trials) {
     SS_Instr_Load_InfoClock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
+    if ((grp === 0)) {
+      if ((block_count <= (num_block / 2))) {
+          default_color = go_color;
+          change_color = stop_color;
+      } else {
+          default_color = stop_color;
+          change_color = go_color;
+      }
+    } else {
+        if ((block_count <= (num_block / 2))) {
+            default_color = stop_color;
+            change_color = go_color;
+        } else {
+            default_color = go_color;
+            change_color = stop_color;
+        }
+    }
+    if ((default_color === [1, 1, 1])) {
+        default_color_text = "WHITE";
+    } else {
+        default_color_text = "BLACK";
+    }
+    if ((change_color === [1, 1, 1])) {
+        change_color_text = "WHITE";
+    } else {
+        change_color_text = "BLACK";
+    }
+    if ((go_color === [1, 1, 1])) {
+        go_color_text = "WHITE";
+    } else {
+        go_color_text = "BLACK";
+    }
+    if ((stop_color === [1, 1, 1])) {
+        stop_color_text = "WHITE";
+    } else {
+        stop_color_text = "BLACK";
+    }
+    
     show_instr = 0;
     if (((block_count === 1) || (block_count === 7))) {
         show_instr = 1;
