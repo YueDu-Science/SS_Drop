@@ -220,7 +220,7 @@ function experimentInit() {
   block_count = 1;
   t_pretrial = 0.6;
   y_ball = 0.4;
-  y_line = 0;
+  y_line = -0.3;
   t_max = 0.5;
   ball_opacity = [];
   timing_tol = 0.03;
@@ -1718,6 +1718,7 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
     
     if (Ball_SS_Instr_PreTrial.status === PsychoJS.Status.STARTED){ // only update if being drawn
       Ball_SS_Instr_PreTrial.setSize([size_ball_pretrial, size_ball_pretrial]);
+      Line_SS_Instr_PreTrial.refresh()
     }
     
     // *Text_1_SS_Instr_PreTrial* updates
