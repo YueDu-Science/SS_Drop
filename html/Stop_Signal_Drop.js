@@ -29,7 +29,6 @@ let expInfo = {'participant': '', 'session': ''};
 
 // schedule the experiment:
 psychoJS.schedule(psychoJS.gui.DlgFromDict({
-  text: "Welcome. Make sure you type in your 'participation ID' and 'session number', then press 'Ok' to continue.",
   dictionary: expInfo,
   title: expName
 }));
@@ -67,13 +66,6 @@ dialogCancelScheduler.add(quitPsychoJS, '', false);
 psychoJS.start({
   expName: expName,
   expInfo: expInfo,
-  resources: [
-    {'name': 'conditions.xlsx', 'path': './conditions.xlsx'},
-    {'name': 'media/check.png', 'path': './media/check.png'},
-    {'name': 'media/cross.png', 'path': './media/cross.png'},
-    {'name': 'media/coin.wav', 'path': './media/coin.wav'},
-    {'name': 'media/buzz.wav', 'path': './media/buzz.wav'}
-  ]
   });
 
 
@@ -139,9 +131,8 @@ var StimList;
 var dt_range;
 var dt_interval;
 var dt_ind;
-var rng1
-var rng2
-
+var prob;
+var num;
 var Instr_ExpClock;
 var Instr_Exp_Text;
 var Instr_Exp_Key;
@@ -220,7 +211,7 @@ function experimentInit() {
   block_count = 1;
   t_pretrial = 0.6;
   y_ball = 0.4;
-  y_line = -0.3;
+  y_line = (- 0.3);
   t_max = 0.5;
   ball_opacity = [];
   timing_tol = 0.03;
@@ -235,22 +226,19 @@ function experimentInit() {
   y_overshoot = ((- (speed * t_overshoot)) + y_line);
   dur_trial = (t_max + t_overshoot);
   dur_feedback = 0.5;
-  line_wd = 2;
+  line_wd = 0.5;
   line_col = [1, 1, 1];
+  ball_wd = 0.01;
   sound_vol = 1;
-
-  var myrng = new Math.seedrandom(participant);   //use new here so it does not affect Math.random()
-  rng1 = myrng()
-  rng2 = myrng()
-  
+  order = random();
   grp = 0;
-  if ((rng1 < 0.5)) {
+  if ((order < 0.5)) {
       grp = 1;
   }
-  
+  color_rnd = random();
   go_color = [1, 1, 1];
   stop_color = [(- 1), (- 1), (- 1)];
-  if ((rng2 < 0.5)) {
+  if ((color_rnd < 0.5)) {
       go_color = [(- 1), (- 1), (- 1)];
       stop_color = [1, 1, 1];
   }
@@ -266,17 +254,16 @@ function experimentInit() {
   dt_interval = [];
   dt_ind = [];
   dt_interval = [[dt_range[0], 0.125], [0.125, 0.2], [0.2, 0.275], [0.275, 0.35], [0.35, 0.425], [0.425, dt_range[1]], [(- 98.5), (- 98.5)]];
-  // prob = [0.1, 0.2, 0.2, 0.2, 0.2, 0.1];
-  // num = [3, 6, 6, 6, 6, 3, 70];
+  prob = [0.1, 0.2, 0.2, 0.2, 0.2, 0.1];
+  num = [3, 6, 6, 6, 6, 3, 70];
   dt_ind = ((((((([0] * 3) + ([1] * 6)) + ([2] * 6)) + ([3] * 6)) + ([4] * 6)) + ([5] * 3)) + ([6] * 70));
-  util.shuffle(dt_ind);
+  shuffle(dt_ind);
   
   // Initialize components for Routine "Instr_Exp"
   Instr_ExpClock = new util.Clock();
   Instr_Exp_Text = new visual.TextStim({
     win: psychoJS.window,
     name: 'Instr_Exp_Text',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -324,7 +311,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Instr_PreTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0.01, lineColor: new util.Color(undefined),
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -4, interpolate: true,
   });
@@ -332,7 +319,6 @@ function experimentInit() {
   Text_1_SS_Instr_PreTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_1_SS_Instr_PreTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -344,7 +330,6 @@ function experimentInit() {
   Text_2_SS_Instr_PreTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_2_SS_Instr_PreTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -356,7 +341,6 @@ function experimentInit() {
   Text_3_SS_Instr_PreTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_3_SS_Instr_PreTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -393,7 +377,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Instr_MainTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0.01, lineColor: new util.Color(undefined),
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -3, interpolate: true,
   });
@@ -401,7 +385,6 @@ function experimentInit() {
   Text_1_SS_Instr_MainTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_1_SS_Instr_MainTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -413,7 +396,6 @@ function experimentInit() {
   Text_2_SS_Instr_MainTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_2_SS_Instr_MainTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -425,7 +407,6 @@ function experimentInit() {
   Text_3_SS_Instr_MainTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_3_SS_Instr_MainTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -598,7 +579,6 @@ function experimentInit() {
   Instr_SS_Text = new visual.TextStim({
     win: psychoJS.window,
     name: 'Instr_SS_Text',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -646,7 +626,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Instr_PreTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0.01, lineColor: new util.Color(undefined),
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -4, interpolate: true,
   });
@@ -654,7 +634,6 @@ function experimentInit() {
   Text_1_SS_Instr_PreTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_1_SS_Instr_PreTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -666,7 +645,6 @@ function experimentInit() {
   Text_2_SS_Instr_PreTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_2_SS_Instr_PreTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -678,7 +656,6 @@ function experimentInit() {
   Text_3_SS_Instr_PreTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_3_SS_Instr_PreTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -715,7 +692,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Instr_MainTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0.01, lineColor: new util.Color(undefined),
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -3, interpolate: true,
   });
@@ -723,7 +700,6 @@ function experimentInit() {
   Text_1_SS_Instr_MainTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_1_SS_Instr_MainTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -735,7 +711,6 @@ function experimentInit() {
   Text_2_SS_Instr_MainTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_2_SS_Instr_MainTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -747,7 +722,6 @@ function experimentInit() {
   Text_3_SS_Instr_MainTrial = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_3_SS_Instr_MainTrial',
-    alignText: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -763,7 +737,6 @@ function experimentInit() {
   Text_Instr_Block_Num = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_Instr_Block_Num',
-    alignHoriz: 'center',
     text: 'default text',
     font: 'Arial',
     units: undefined, 
@@ -935,7 +908,7 @@ function SS_Prac_Block_LoopLoopBegin(thisScheduler) {
   // set up handler to look after randomisation of conditions etc
   SS_Prac_Block_Loop = new TrialHandler({
     psychoJS: psychoJS,
-    nReps: num_block_prac, method: TrialHandler.Method.SEQUENTIAL,
+    nReps: $num_block_prac, method: TrialHandler.Method.SEQUENTIAL,
     extraInfo: expInfo, originPath: undefined,
     trialList: undefined,
     seed: undefined, name: 'SS_Prac_Block_Loop'
@@ -1010,7 +983,7 @@ function SS_Prac_Trial_LoopLoopBegin(thisScheduler) {
   // set up handler to look after randomisation of conditions etc
   SS_Prac_Trial_Loop = new TrialHandler({
     psychoJS: psychoJS,
-    nReps: num_trial_prac, method: TrialHandler.Method.SEQUENTIAL,
+    nReps: $num_trial_prac, method: TrialHandler.Method.SEQUENTIAL,
     extraInfo: expInfo, originPath: undefined,
     trialList: undefined,
     seed: undefined, name: 'SS_Prac_Trial_Loop'
@@ -1057,7 +1030,7 @@ function SS_Block_LoopLoopBegin(thisScheduler) {
   // set up handler to look after randomisation of conditions etc
   SS_Block_Loop = new TrialHandler({
     psychoJS: psychoJS,
-    nReps: num_block, method: TrialHandler.Method.SEQUENTIAL,
+    nReps: $num_block, method: TrialHandler.Method.SEQUENTIAL,
     extraInfo: expInfo, originPath: undefined,
     trialList: undefined,
     seed: undefined, name: 'SS_Block_Loop'
@@ -1098,7 +1071,7 @@ function Show_Instr_BoolLoopBegin(thisScheduler) {
   // set up handler to look after randomisation of conditions etc
   Show_Instr_Bool = new TrialHandler({
     psychoJS: psychoJS,
-    nReps: show_instr, method: TrialHandler.Method.SEQUENTIAL,
+    nReps: $show_instr, method: TrialHandler.Method.SEQUENTIAL,
     extraInfo: expInfo, originPath: undefined,
     trialList: undefined,
     seed: undefined, name: 'Show_Instr_Bool'
@@ -1170,7 +1143,7 @@ function SS_Trial_LoopLoopBegin(thisScheduler) {
   // set up handler to look after randomisation of conditions etc
   SS_Trial_Loop = new TrialHandler({
     psychoJS: psychoJS,
-    nReps: num_trial, method: TrialHandler.Method.SEQUENTIAL,
+    nReps: $num_trial, method: TrialHandler.Method.SEQUENTIAL,
     extraInfo: expInfo, originPath: undefined,
     trialList: undefined,
     seed: undefined, name: 'SS_Trial_Loop'
@@ -1292,21 +1265,21 @@ function InitiationRoutineEnd(trials) {
     }
     instr_exp_text = `Thank you for participating in our study!
     
-This study will take about 30 minutes. Once you start, you cannot turn off your web browser until you complete the study.
+    This study will take about 30 minutes. Once you start, you cannot turn off your web browser until you complete the study.
     
-On next page, please carefully read this instruction.
+    On next page, please carefully read this instruction.
     
-If you are ready, press (space) to continue.`
+    If you are ready, press (space) to continue.`
     ;
     instr_ss_text = `Great job!
     
-Now we are about to start the main task.
+    Now we are about to start the main task.
     
-There will be 12 rounds and you can take a rest between rounds.
+    There will be 12 rounds and you can take a rest between rounds.
     
-On next page, read the instruction carefully.
+    On next page, read the instruction carefully.
     
-If you are ready, press (space) to continue.`
+    If you are ready, press (space) to continue.`
     ;
     
     // the Routine "Initiation" was not non-slip safe, so reset the non-slip timer
@@ -1482,12 +1455,12 @@ function SS_Prac_Instr_Load_InfoRoutineBegin(trials) {
     text3 = ``;
     if ((block_count === 1)) {
         ss_instr_text1 = `In the upcoming block,
-press (j) when the ball overlaps the white line`
+    press (j) when the ball overlaps the white line`
     ;
     } else {
         if ((block_count === 2)) {
             ss_instr_text1 = `Now the ball becomes smaller,
-still press (j) when it overlaps the white line`
+    still press (j) when it overlaps the white line`
     ;
         }
     }
@@ -1600,7 +1573,7 @@ function SS_Instr_PreTrialRoutineBegin(trials) {
         dt = (t_max - ct);
     } else {
         sample_ind = dt_ind[trial_count_instr];
-        dt = ((MATH.random() * (dt_interval[sample_ind][1] - dt_interval[sample_ind][0])) + dt_interval[sample_ind][0]);
+        dt = ((random() * (dt_interval[sample_ind][1] - dt_interval[sample_ind][0])) + dt_interval[sample_ind][0]);
         ct = (t_max - dt);
     }
     ball_color = default_color;
@@ -1654,11 +1627,15 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
     t = SS_Instr_PreTrialClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
-    console.log(t)
-    console.log(routineTimer.getTime())
     size_ball_pretrial = (0 - ((size_ball / t_pretrial) * routineTimer.getTime()));
-    if (((trial_count_instr >= 11) && (Resp_SS_Instr_PreTrial.keys !== undefined))) {
-      trials.finished =  true;
+    if (((trial_count_instr >= 11) && (Resp_SS_Instr_PreTrial.keys.length !== 0))) {
+        if ((prac === 1)) {
+            SS_Prac_Instr_Loop.finished = true;
+        } else {
+            if ((prac === 0)) {
+                SS_Instr_Loop.finished = true;
+            }
+        }
     }
     
     
@@ -1719,8 +1696,7 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
     }
     
     if (Ball_SS_Instr_PreTrial.status === PsychoJS.Status.STARTED){ // only update if being drawn
-      Ball_SS_Instr_PreTrial.setSize([(0 - ((size_ball / t_pretrial) * routineTimer.getTime())), (0 - ((size_ball / t_pretrial) * routineTimer.getTime()))]);
-      Line_SS_Instr_PreTrial.refresh()
+      Ball_SS_Instr_PreTrial.setSize([size_ball_pretrial, size_ball_pretrial]);
     }
     
     // *Text_1_SS_Instr_PreTrial* updates
@@ -1899,8 +1875,14 @@ function SS_Instr_MainTrialRoutineEachFrame(trials) {
     } else {
         ball_color = change_color;
     }
-    if (((trial_count_instr >= 11) && (Resp_SS_Instr_MainTrial.keys !== undefined))) {
-      trials.finished =  true;
+    if (((trial_count_instr >= 11) && (Resp_SS_Instr_MainTrial.keys.length !== 0))) {
+        if ((prac === 1)) {
+            SS_Prac_Instr_Loop.finished = true;
+        } else {
+            if ((prac === 0)) {
+                SS_Instr_Loop.finished = true;
+            }
+        }
     }
     
     
@@ -2082,7 +2064,7 @@ function SS_Prac_CountDownRoutineBegin(trials) {
     routineTimer.reset(3);
     corr_score = 0;
     
-    Line_SS_Prac_CountDown.setPos([0, y_line]);
+    Line_SS_Prac_CountDown.setPos([(- 0.5), y_line]);
     Line_SS_Prac_CountDown.setFillColor(new util.Color(line_col));
     Line_SS_Prac_CountDown.setLineColor(new util.Color(line_col));
     Line_SS_Prac_CountDown.setLineWidth(line_wd);
@@ -2216,7 +2198,7 @@ function SS_Prac_PreTrialRoutineBegin(trials) {
     // update component parameters for each repeat
     routineTimer.reset(0);
     
-    Line_SS_Prac_PreTrial.setPos([0, y_line]);
+    Line_SS_Prac_PreTrial.setPos([(- 0.5), y_line]);
     Line_SS_Prac_PreTrial.setFillColor(new util.Color(line_col));
     Line_SS_Prac_PreTrial.setLineColor(new util.Color(line_col));
     Line_SS_Prac_PreTrial.setLineWidth(line_wd);
@@ -2368,7 +2350,7 @@ function SS_Prac_MainTrialRoutineBegin(trials) {
     // update component parameters for each repeat
     routineTimer.reset(t_max);
     
-    Line_SS_Prac_MainTrial.setPos([0, y_line]);
+    Line_SS_Prac_MainTrial.setPos([(- 0.5), y_line]);
     Line_SS_Prac_MainTrial.setFillColor(new util.Color(line_col));
     Line_SS_Prac_MainTrial.setLineColor(new util.Color(line_col));
     Line_SS_Prac_MainTrial.setLineWidth(line_wd);
@@ -2521,7 +2503,7 @@ function SS_Prac_MainTrialRoutineEnd(trials) {
         thisComponent.setAutoDraw(false);
       }
     }
-    if ((Resp_SS_Prac_MainTrial.keys === undefined)) {
+    if ((Resp_SS_Prac_MainTrial.keys.length === 0)) {
         rt = 99;
         ball_opa = 0;
         press = [];
@@ -2581,7 +2563,7 @@ function SS_Prac_PostTrialRoutineBegin(trials) {
     secs: -1,
     });
     Sound_SS_Prac_PostTrial.setVolume(sound_vol);
-    Line_SS_Prac_PostTrial.setPos([0, y_line]);
+    Line_SS_Prac_PostTrial.setPos([(- 0.5), y_line]);
     Line_SS_Prac_PostTrial.setFillColor(new util.Color(line_col));
     Line_SS_Prac_PostTrial.setLineColor(new util.Color(line_col));
     Line_SS_Prac_PostTrial.setLineWidth(line_wd);
@@ -2593,18 +2575,18 @@ function SS_Prac_PostTrialRoutineBegin(trials) {
     Ball_SS_Prac_PostTrial.setOpacity(ball_opa);
     Ball_SS_Prac_PostTrial.setPos([0, y_ball_posttrial]);
     Ball_SS_Prac_PostTrial.setSize([size_ball, size_ball]);
-    psychoJS.experiment.addData("Practice", prac);
-    psychoJS.experiment.addData("grp", grp);
-    psychoJS.experiment.addData("go_color", go_color);
-    psychoJS.experiment.addData("default_color", default_color);
-    psychoJS.experiment.addData("block_num", block_count);
-    psychoJS.experiment.addData("dt", dt);
-    psychoJS.experiment.addData("ct", ct);
-    psychoJS.experiment.addData("key", press);
-    psychoJS.experiment.addData("rt", rt);
-    psychoJS.experiment.addData("Correct", corr);
-    psychoJS.experiment.addData("trial_Count", trial_count);
-    psychoJS.experiment.addData("session", session);
+    thisExp.addData("Practice", prac);
+    thisExp.addData("grp", grp);
+    thisExp.addData("go_color", go_color);
+    thisExp.addData("default_color", default_color);
+    thisExp.addData("block_num", block_count);
+    thisExp.addData("dt", dt);
+    thisExp.addData("ct", ct);
+    thisExp.addData("key", press);
+    thisExp.addData("rt", rt);
+    thisExp.addData("Correct", corr);
+    thisExp.addData("trial_Count", trial_count);
+    thisExp.addData("session", session);
     trial_count = (trial_count + 1);
     if ((corr_score === num_prac_crit)) {
         SS_Prac_Trial_Loop.finished = true;
@@ -2645,10 +2627,8 @@ function SS_Prac_PostTrialRoutineEachFrame(trials) {
       psychoJS.window.callOnFlip(function(){ Sound_SS_Prac_PostTrial.play(); });  // screen flip
       Sound_SS_Prac_PostTrial.status = PsychoJS.Status.STARTED;
     }
-
-    frameRemains = dur_feedback  - psychoJS.window.monitorFramePeriod * 0.75;
-    if (t >= frameRemains && Sound_SS_Prac_PostTrial.status === PsychoJS.Status.STARTED) {
-      //Sound_SS_Prac_PostTrial.stop();  // stop the sound (if longer than duration)
+    if (t >= (Sound_SS_Prac_PostTrial.getDuration() + Sound_SS_Prac_PostTrial.tStart)     && Sound_SS_Prac_PostTrial.status === PsychoJS.Status.STARTED) {
+      Sound_SS_Prac_PostTrial.stop();  // stop the sound (if longer than duration)
       Sound_SS_Prac_PostTrial.status = PsychoJS.Status.FINISHED;
     }
     
@@ -2746,7 +2726,7 @@ function SS_Prac_PostTrialRoutineEnd(trials) {
         thisComponent.setAutoDraw(false);
       }
     }
-    //Sound_SS_Prac_PostTrial.stop();  // ensure sound has stopped at end of routine
+    Sound_SS_Prac_PostTrial.stop();  // ensure sound has stopped at end of routine
     // the Routine "SS_Prac_PostTrial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -2945,17 +2925,16 @@ function SS_Instr_Load_InfoRoutineBegin(trials) {
     text3 = ``;
     if ((block_count === 1)) {
         ss_instr_text2 = `In the upcoming blocks,
-the ball always starts in ${default_color_text}
-and sometimes change to ${change_color_text}`
+    the ball always starts in ${default_color_text}
+    and sometimes change to ${change_color_text}`
     ;
     } else {
         if ((block_count === ((num_block / 2) + 1))) {
-            ss_instr_text2 = `Now the ball always starts in ${change_color_text} 
-and occationally changes to ${default_color_text}`;
+            ss_instr_text2 = `Now the ball always starts in ${change_color_text} and occationally changes to ${default_color_text}`;
         }
     }
     ss_instr_text1 = `Your job is to PRESS (j) when the ${go_color_text} ball overlaps the line
-and DO NOT PRESS ANY KEY when the ${stop_color_text} ball overlaps the line`
+    and DO NOT PRESS ANY KEY when the ${stop_color_text} ball overlaps the line`
     ;
     ss_instr_text3 = `Whenever you are ready, press (j) to start the task`;
     corr_score = 0;
@@ -3036,7 +3015,7 @@ function Instr_Block_NumRoutineBegin(trials) {
     Instr_Block_NumClock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
-    Text_Instr_Block_Num.setText((('Block ' + block_count) + '\nPress (j) to start'));
+    Text_Instr_Block_Num.setText((('Block ' + str(block_count)) + '\nPress (j) to start'));
     Resp_Instr_Block_Num.keys = undefined;
     Resp_Instr_Block_Num.rt = undefined;
     _Resp_Instr_Block_Num_allKeys = [];
@@ -3157,7 +3136,7 @@ function SS_CountDownRoutineBegin(trials) {
     // update component parameters for each repeat
     routineTimer.reset(3);
     
-    Line_SS_CountDown.setPos([0, y_line]);
+    Line_SS_CountDown.setPos([(- 0.5), y_line]);
     Line_SS_CountDown.setFillColor(new util.Color(line_col));
     Line_SS_CountDown.setLineColor(new util.Color(line_col));
     Line_SS_CountDown.setLineWidth(line_wd);
@@ -3281,13 +3260,13 @@ function SS_PreTrialRoutineBegin(trials) {
             dt = (t_max - ct);
         } else {
             sample_ind = dt_ind[(trial_count - 6)];
-            dt = ((MATH.random() * (dt_interval[sample_ind][1] - dt_interval[sample_ind][0])) + dt_interval[sample_ind][0]);
+            dt = ((random() * (dt_interval[sample_ind][1] - dt_interval[sample_ind][0])) + dt_interval[sample_ind][0]);
             ct = (t_max - dt);
         }
     }
     ball_color = default_color;
     
-    Line_SS_PreTrial.setPos([0, y_line]);
+    Line_SS_PreTrial.setPos([(- 0.5), y_line]);
     Line_SS_PreTrial.setFillColor(new util.Color(line_col));
     Line_SS_PreTrial.setLineColor(new util.Color(line_col));
     Line_SS_PreTrial.setLineWidth(line_wd);
@@ -3422,7 +3401,7 @@ function SS_MainTrialRoutineBegin(trials) {
     // update component parameters for each repeat
     routineTimer.reset(t_max);
     
-    Line_SS_MainTrial.setPos([0, y_line]);
+    Line_SS_MainTrial.setPos([(- 0.5), y_line]);
     Line_SS_MainTrial.setFillColor(new util.Color(line_col));
     Line_SS_MainTrial.setLineColor(new util.Color(line_col));
     Line_SS_MainTrial.setLineWidth(line_wd);
@@ -3557,7 +3536,7 @@ function SS_MainTrialRoutineEnd(trials) {
         thisComponent.setAutoDraw(false);
       }
     }
-    if ((Resp_SS_MainTrial.keys === undefined)) {
+    if ((Resp_SS_MainTrial.keys.length === 0)) {
         rt = 99;
         ball_opa = 0;
         press = [];
@@ -3626,7 +3605,7 @@ function SS_PostTrialRoutineBegin(trials) {
     secs: -1,
     });
     Sound_SS_PostTrial.setVolume(sound_vol);
-    Line_SS_PostTrial.setPos([0, y_line]);
+    Line_SS_PostTrial.setPos([(- 0.5), y_line]);
     Line_SS_PostTrial.setFillColor(new util.Color(line_col));
     Line_SS_PostTrial.setLineColor(new util.Color(line_col));
     Line_SS_PostTrial.setLineWidth(line_wd);
@@ -3636,18 +3615,18 @@ function SS_PostTrialRoutineBegin(trials) {
     Ball_SS_PostTrial.setOpacity(ball_opa);
     Ball_SS_PostTrial.setPos([0, y_ball_posttrial]);
     Ball_SS_PostTrial.setSize([size_ball, size_ball]);
-    psychoJS.experiment.addData("Practice", prac);
-    psychoJS.experiment.addData("grp", grp);
-    psychoJS.experiment.addData("go_color", go_color);
-    psychoJS.experiment.addData("default_color", default_color);
-    psychoJS.experiment.addData("block_num", block_count);
-    psychoJS.experiment.addData("dt", dt);
-    psychoJS.experiment.addData("ct", ct);
-    psychoJS.experiment.addData("key", press);
-    psychoJS.experiment.addData("rt", rt);
-    psychoJS.experiment.addData("Correct", corr);
-    psychoJS.experiment.addData("trial_Count", trial_count);
-    psychoJS.experiment.addData("session", session);
+    thisExp.addData("Practice", prac);
+    thisExp.addData("grp", grp);
+    thisExp.addData("go_color", go_color);
+    thisExp.addData("default_color", default_color);
+    thisExp.addData("block_num", block_count);
+    thisExp.addData("dt", dt);
+    thisExp.addData("ct", ct);
+    thisExp.addData("key", press);
+    thisExp.addData("rt", rt);
+    thisExp.addData("Correct", corr);
+    thisExp.addData("trial_Count", trial_count);
+    thisExp.addData("session", session);
     trial_count = (trial_count + 1);
     if ((trial_count === num_trial)) {
         block_count = (block_count + 1);
@@ -3686,10 +3665,8 @@ function SS_PostTrialRoutineEachFrame(trials) {
       psychoJS.window.callOnFlip(function(){ Sound_SS_PostTrial.play(); });  // screen flip
       Sound_SS_PostTrial.status = PsychoJS.Status.STARTED;
     }
-
-    frameRemains = dur_feedback  - psychoJS.window.monitorFramePeriod * 0.75;
-    if (t >= frameRemains && Sound_SS_PostTrial.status === PsychoJS.Status.STARTED) {
-      //Sound_SS_PostTrial.stop();  // stop the sound (if longer than duration)
+    if (t >= (Sound_SS_PostTrial.getDuration() + Sound_SS_PostTrial.tStart)     && Sound_SS_PostTrial.status === PsychoJS.Status.STARTED) {
+      Sound_SS_PostTrial.stop();  // stop the sound (if longer than duration)
       Sound_SS_PostTrial.status = PsychoJS.Status.FINISHED;
     }
     
@@ -3764,6 +3741,7 @@ function SS_PostTrialRoutineEachFrame(trials) {
   };
 }
 
+
 function SS_PostTrialRoutineEnd(trials) {
   return function () {
     //------Ending Routine 'SS_PostTrial'-------
@@ -3772,7 +3750,7 @@ function SS_PostTrialRoutineEnd(trials) {
         thisComponent.setAutoDraw(false);
       }
     }
-    //Sound_SS_PostTrial.stop();  // ensure sound has stopped at end of routine
+    Sound_SS_PostTrial.stop();  // ensure sound has stopped at end of routine
     // the Routine "SS_PostTrial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
