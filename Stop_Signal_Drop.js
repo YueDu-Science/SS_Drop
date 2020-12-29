@@ -141,7 +141,6 @@ var dt_interval;
 var dt_ind;
 var rng1
 var rng2
-var circle_opacity = 0.5
 var Instr_ExpClock;
 var Instr_Exp_Text;
 var Instr_Exp_Key;
@@ -305,7 +304,7 @@ function experimentInit() {
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
-    fillColor: new util.Color(undefined),
+    fillColor: undefined,
     opacity: 1, depth: -2, interpolate: true,
   });
   
@@ -324,7 +323,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Instr_PreTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -4, interpolate: true,
   });
@@ -393,7 +392,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Instr_MainTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -3, interpolate: true,
   });
@@ -498,7 +497,7 @@ function experimentInit() {
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
-    fillColor: new util.Color(undefined),
+    fillColor: undefined,
     opacity: 1, depth: -3, interpolate: true,
   });
   
@@ -506,7 +505,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Prac_PreTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -4, interpolate: true,
   });
@@ -540,7 +539,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Prac_MainTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -3, interpolate: true,
   });
@@ -588,7 +587,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Prac_PostTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1.0, depth: -4, interpolate: true,
   });
@@ -627,7 +626,7 @@ function experimentInit() {
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
-    fillColor: new util.Color(undefined),
+    fillColor: undefined,
     opacity: 1, depth: -2, interpolate: true,
   });
   
@@ -646,7 +645,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Instr_PreTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -4, interpolate: true,
   });
@@ -715,7 +714,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_Instr_MainTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -3, interpolate: true,
   });
@@ -814,7 +813,7 @@ function experimentInit() {
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
-    fillColor: new util.Color(undefined),
+    fillColor: undefined,
     opacity: 1, depth: -2, interpolate: true,
   });
   
@@ -822,7 +821,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_PreTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -3, interpolate: true,
   });
@@ -845,7 +844,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_MainTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1, depth: -2, interpolate: true,
   });
@@ -882,7 +881,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'Ball_SS_PostTrial', units : 'height', 
     edges: 1000, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 0, lineColor: new util.Color(undefined),
+    lineWidth: 0, lineColor: undefined,
     fillColor: new util.Color(1.0),
     opacity: 1.0, depth: -3, interpolate: true,
   });
@@ -1609,7 +1608,6 @@ function SS_Instr_PreTrialRoutineBegin(trials) {
     Line_SS_Instr_PreTrial.setFillColor(new util.Color(line_col));
     Line_SS_Instr_PreTrial.setLineColor(new util.Color(line_col));
     Line_SS_Instr_PreTrial.setLineWidth(line_wd);
-    Circle_SS_Instr_PreTrial.setOpacity(circle_opacity)
     Circle_SS_Instr_PreTrial.setPos([0, y_ball]);
     Circle_SS_Instr_PreTrial.setSize([size_ball, size_ball]);
     Circle_SS_Instr_PreTrial.setLineColor(new util.Color(ball_color));
