@@ -2932,19 +2932,11 @@ function SS_Instr_Load_InfoRoutineBegin(trials) {
     } else {
         go_color_text = "BLACK";
     }
-    if (JSON.stringify(stop_color) === JSON.stringify([1, 1, 1])) {
+    if (JSON.stringify(stop_color) == JSON.stringify([1, 1, 1])) {
         stop_color_text = "WHITE";
     } else {
         stop_color_text = "BLACK";
     }
-    
-    console.log(grp)
-    console.log(go_color)
-    console.log(stop_color)
-    console.log(default_color)
-    console.log(default_color_text)
-    console.log(change_color)
-    console.log(change_color_text)
 
     show_instr = 0;
     if (((block_count === 1) || (block_count === 7))) {
@@ -2955,17 +2947,10 @@ function SS_Instr_Load_InfoRoutineBegin(trials) {
     text1 = ``;
     text2 = ``;
     text3 = ``;
-    if ((block_count === 1)) {
-        ss_instr_text2 = `In the upcoming blocks,
+    
+    ss_instr_text2 = `In the upcoming blocks,
 the ball always starts in ${default_color_text}
-and sometimes change to ${change_color_text}`
-    ;
-    } else {
-        if ((block_count === ((num_block / 2) + 1))) {
-            ss_instr_text2 = `Now the ball always starts in ${change_color_text} 
-and occationally changes to ${default_color_text}`;
-        }
-    }
+and sometimes changes to ${change_color_text}`
     ss_instr_text1 = `Your job is to PRESS (j) when the ${go_color_text} ball overlaps the line
 and DO NOT PRESS ANY KEY when the ${stop_color_text} ball overlaps the line`
     ;
@@ -3440,6 +3425,7 @@ function SS_MainTrialRoutineBegin(trials) {
     Line_SS_MainTrial.setLineColor(new util.Color(line_col));
     Line_SS_MainTrial.setLineWidth(line_wd);
     Ball_SS_MainTrial.setPos([0, y_ball]);
+    Ball_SS_MainTrial.setFillColor(new util.Color(ball_color));
     Ball_SS_MainTrial.setSize([size_ball, size_ball]);
     Resp_SS_MainTrial.keys = undefined;
     Resp_SS_MainTrial.rt = undefined;
