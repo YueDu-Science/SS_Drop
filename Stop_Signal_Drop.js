@@ -2227,6 +2227,7 @@ function SS_Prac_PreTrialRoutineBegin(trials) {
     Circle_SS_Prac_PreTrial.setLineColor(new util.Color(ball_color));
     Circle_SS_Prac_PreTrial.setLineWidth(ball_wd);
     Ball_SS_Prac_PreTrial.setPos([0, y_ball]);
+    Ball_SS_Prac_PreTrial.setSize([0, 0]);
     Ball_SS_Prac_PreTrial.setFillColor(new util.Color(ball_color));
     // keep track of which components have finished
     SS_Prac_PreTrialComponents = [];
@@ -2374,6 +2375,7 @@ function SS_Prac_MainTrialRoutineBegin(trials) {
     Line_SS_Prac_MainTrial.setLineWidth(line_wd);
     Score_SS_Prac_MainTrial.setColor(new util.Color(score_color));
     Score_SS_Prac_MainTrial.setText(corr_score);
+    Ball_SS_Prac_MainTrial.setPos([0, y_ball]);
     Ball_SS_Prac_MainTrial.setSize([size_ball, size_ball]);
     Resp_SS_Prac_MainTrial.keys = undefined;
     Resp_SS_Prac_MainTrial.rt = undefined;
@@ -3295,6 +3297,7 @@ function SS_PreTrialRoutineBegin(trials) {
     Circle_SS_PreTrial.setSize([size_ball, size_ball]);
     Circle_SS_PreTrial.setLineColor(new util.Color(ball_color));
     Circle_SS_PreTrial.setLineWidth(ball_wd);
+    Ball_SS_PreTrial.setSize([0, 0]);
     Ball_SS_PreTrial.setPos([0, y_ball]);
     Ball_SS_PreTrial.setFillColor(new util.Color(ball_color));
     // keep track of which components have finished
@@ -3426,6 +3429,7 @@ function SS_MainTrialRoutineBegin(trials) {
     Line_SS_MainTrial.setFillColor(new util.Color(line_col));
     Line_SS_MainTrial.setLineColor(new util.Color(line_col));
     Line_SS_MainTrial.setLineWidth(line_wd);
+    Ball_SS_MainTrial.setPos([0, y_ball]);
     Ball_SS_MainTrial.setSize([size_ball, size_ball]);
     Resp_SS_MainTrial.keys = undefined;
     Resp_SS_MainTrial.rt = undefined;
