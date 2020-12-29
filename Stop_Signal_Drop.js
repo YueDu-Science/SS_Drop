@@ -139,8 +139,9 @@ var StimList;
 var dt_range;
 var dt_interval;
 var dt_ind;
-var prob;
-var num;
+var rng1
+var rng2
+
 var Instr_ExpClock;
 var Instr_Exp_Text;
 var Instr_Exp_Key;
@@ -242,7 +243,6 @@ function experimentInit() {
   var myrng = new Math.seedrandom(participant);   //use new here so it does not affect Math.random()
   rng1 = myrng()
   rng2 = myrng()
-  rng3 = myrng()
   
   grp = 0;
   if ((rng1 < 0.5)) {
