@@ -1716,7 +1716,7 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
     }
     
     size_ball_pretrial = (0 + ((size_ball / t_pretrial) * t));
-
+    console.log(size_ball_pretrial)
     if (Ball_SS_Instr_PreTrial.status === PsychoJS.Status.STARTED){ // only update if being drawn
       Ball_SS_Instr_PreTrial.setSize([size_ball_pretrial, size_ball_pretrial]);
     }
