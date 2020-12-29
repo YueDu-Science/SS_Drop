@@ -257,7 +257,7 @@ function experimentInit() {
   num_trial_prac = 2000;
   num_prac_crit = 4;
   num_block = 12;
-  num_trial = 10;
+  num_trial = 106;
   StimList = [];
   dt_range = [0.05, 0.5];
   dt_interval = [];
@@ -1604,6 +1604,9 @@ function SS_Instr_PreTrialRoutineBegin(trials) {
         dt = ((Math.random() * (dt_interval[sample_ind][1] - dt_interval[sample_ind][0])) + dt_interval[sample_ind][0]);
         ct = (t_max - dt);
     }
+
+    console.log(dt)
+    
     ball_color = default_color;
     
     Line_SS_Instr_PreTrial.setPos([0, y_line]);
