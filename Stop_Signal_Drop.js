@@ -1596,7 +1596,7 @@ function SS_Instr_PreTrialRoutineBegin(trials) {
         dt = (t_max - ct);
     } else {
         sample_ind = dt_ind[trial_count_instr];
-        dt = ((MATH.random() * (dt_interval[sample_ind][1] - dt_interval[sample_ind][0])) + dt_interval[sample_ind][0]);
+        dt = ((Math.random() * (dt_interval[sample_ind][1] - dt_interval[sample_ind][0])) + dt_interval[sample_ind][0]);
         ct = (t_max - dt);
     }
     ball_color = default_color;
@@ -1653,7 +1653,7 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
     // update/draw components on each frame
     
     if (((trial_count_instr >= 11) && (Resp_SS_Instr_PreTrial.keys !== undefined))) {
-      trials.finished =  true;
+      trials.finished = true;
     }
     
     // *Line_SS_Instr_PreTrial* updates
@@ -3280,7 +3280,7 @@ function SS_PreTrialRoutineBegin(trials) {
             dt = (t_max - ct);
         } else {
             sample_ind = dt_ind[(trial_count - 6)];
-            dt = ((MATH.random() * (dt_interval[sample_ind][1] - dt_interval[sample_ind][0])) + dt_interval[sample_ind][0]);
+            dt = ((Math.random() * (dt_interval[sample_ind][1] - dt_interval[sample_ind][0])) + dt_interval[sample_ind][0]);
             ct = (t_max - dt);
         }
     }
