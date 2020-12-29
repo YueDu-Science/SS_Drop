@@ -2938,6 +2938,14 @@ function SS_Instr_Load_InfoRoutineBegin(trials) {
         stop_color_text = "BLACK";
     }
     
+    console.log(grp)
+    console.log(go_color)
+    console.log(stop_color)
+    console.log(default_color)
+    console.log(default_color_text)
+    console.log(change_color)
+    console.log(change_color_text)
+
     show_instr = 0;
     if (((block_count === 1) || (block_count === 7))) {
         show_instr = 1;
