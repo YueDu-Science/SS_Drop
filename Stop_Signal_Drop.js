@@ -2917,22 +2917,22 @@ function SS_Instr_Load_InfoRoutineBegin(trials) {
             change_color = stop_color;
         }
     }
-    if ((default_color === [1, 1, 1])) {
+    if (JSON.stringify(default_color) == JSON.stringify([1, 1, 1])) {
         default_color_text = "WHITE";
     } else {
         default_color_text = "BLACK";
     }
-    if ((change_color === [1, 1, 1])) {
+    if (JSON.stringify(change_color) == JSON.stringify([1, 1, 1])) {
         change_color_text = "WHITE";
     } else {
         change_color_text = "BLACK";
     }
-    if ((go_color === [1, 1, 1])) {
+    if (JSON.stringify(go_color) == JSON.stringify([1, 1, 1])) {
         go_color_text = "WHITE";
     } else {
         go_color_text = "BLACK";
     }
-    if ((stop_color === [1, 1, 1])) {
+    if (JSON.stringify(stop_color) === JSON.stringify([1, 1, 1])) {
         stop_color_text = "WHITE";
     } else {
         stop_color_text = "BLACK";
