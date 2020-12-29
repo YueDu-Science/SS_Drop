@@ -451,7 +451,7 @@ function experimentInit() {
   Text_SS_Prac_CountDown = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_SS_Prac_CountDown',
-    text: undefined,
+    text: '',
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.2,  wrapWidth: undefined, ori: 0,
@@ -789,7 +789,7 @@ function experimentInit() {
   Text_SS_CountDown = new visual.TextStim({
     win: psychoJS.window,
     name: 'Text_SS_CountDown',
-    text: undefined,
+    text: '',
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.2,  wrapWidth: undefined, ori: 0,
@@ -1719,7 +1719,6 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
     }
 
     size_ball_pretrial = (0 + ((size_ball / t_pretrial) * t));
-    console.log(size_ball_pretrial)
     if (Ball_SS_Instr_PreTrial.status === PsychoJS.Status.STARTED){ // only update if being drawn
       Ball_SS_Instr_PreTrial.setSize([size_ball_pretrial, size_ball_pretrial]);
     }
@@ -2630,7 +2629,6 @@ function SS_Prac_PostTrialRoutineBegin(trials) {
     return Scheduler.Event.NEXT;
   };
 }
-
 
 function SS_Prac_PostTrialRoutineEachFrame(trials) {
   return function () {
@@ -3640,6 +3638,7 @@ function SS_PostTrialRoutineBegin(trials) {
     Image_SS_PostTrial.setPos([0.2, y_line]);
     Image_SS_PostTrial.setImage(feedback_image);
     Ball_SS_PostTrial.setOpacity(ball_opa);
+    Ball_SS_PostTrial.setFillColor(new util.Color(ball_color))
     Ball_SS_PostTrial.setPos([0, y_ball_posttrial]);
     Ball_SS_PostTrial.setSize([size_ball, size_ball]);
     psychoJS.experiment.addData("Practice", prac);
