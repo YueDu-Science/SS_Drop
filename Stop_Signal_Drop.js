@@ -293,7 +293,7 @@ function experimentInit() {
   SS_Instr_PreTrialClock = new util.Clock();
   Line_SS_Instr_PreTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Instr_PreTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -371,7 +371,7 @@ function experimentInit() {
   SS_Instr_MainTrialClock = new util.Clock();
   Line_SS_Instr_MainTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Instr_MainTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -440,7 +440,7 @@ function experimentInit() {
   SS_Prac_CountDownClock = new util.Clock();
   Line_SS_Prac_CountDown = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Prac_CountDown', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -475,7 +475,7 @@ function experimentInit() {
   
   Line_SS_Prac_PreTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Prac_PreTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -518,7 +518,7 @@ function experimentInit() {
   
   Line_SS_Prac_MainTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Prac_MainTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -557,7 +557,7 @@ function experimentInit() {
   Sound_SS_Prac_PostTrial.setVolume(1.0);
   Line_SS_Prac_PostTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Prac_PostTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -615,7 +615,7 @@ function experimentInit() {
   SS_Instr_PreTrialClock = new util.Clock();
   Line_SS_Instr_PreTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Instr_PreTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -693,7 +693,7 @@ function experimentInit() {
   SS_Instr_MainTrialClock = new util.Clock();
   Line_SS_Instr_MainTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_Instr_MainTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -778,7 +778,7 @@ function experimentInit() {
   SS_CountDownClock = new util.Clock();
   Line_SS_CountDown = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_CountDown', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -802,7 +802,7 @@ function experimentInit() {
   
   Line_SS_PreTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_PreTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -834,7 +834,7 @@ function experimentInit() {
   
   Line_SS_MainTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_MainTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -862,7 +862,7 @@ function experimentInit() {
   Sound_SS_PostTrial.setVolume(1.0);
   Line_SS_PostTrial = new visual.ShapeStim ({
     win: psychoJS.window, name: 'Line_SS_PostTrial', units : 'height', 
-    vertices: [[-[2, 0.5][0]/2.0, 0], [+[2, 0.5][0]/2.0, 0]],
+    vertices: [[-[1, 0.5][0]/2.0, 0], [+[1, 0.5][0]/2.0, 0]],
     ori: 0, pos: [0, 0],
     lineWidth: 1.0, lineColor: new util.Color(1.0),
     fillColor: new util.Color(1.0),
@@ -1292,21 +1292,21 @@ function InitiationRoutineEnd(trials) {
     }
     instr_exp_text = `Thank you for participating in our study!
     
-    This study will take about 30 minutes. Once you start, you cannot turn off your web browser until you complete the study.
+This study will take about 30 minutes. Once you start, you cannot turn off your web browser until you complete the study.
     
-    On next page, please carefully read this instruction.
+On next page, please carefully read this instruction.
     
-    If you are ready, press (space) to continue.`
+If you are ready, press (space) to continue.`
     ;
     instr_ss_text = `Great job!
     
-    Now we are about to start the main task.
+Now we are about to start the main task.
     
-    There will be 12 rounds and you can take a rest between rounds.
+There will be 12 rounds and you can take a rest between rounds.
     
-    On next page, read the instruction carefully.
+On next page, read the instruction carefully.
     
-    If you are ready, press (space) to continue.`
+If you are ready, press (space) to continue.`
     ;
     
     // the Routine "Initiation" was not non-slip safe, so reset the non-slip timer
@@ -1482,12 +1482,12 @@ function SS_Prac_Instr_Load_InfoRoutineBegin(trials) {
     text3 = ``;
     if ((block_count === 1)) {
         ss_instr_text1 = `In the upcoming block,
-    press (j) when the ball overlaps the white line`
+press (j) when the ball overlaps the white line`
     ;
     } else {
         if ((block_count === 2)) {
             ss_instr_text1 = `Now the ball becomes smaller,
-    still press (j) when it overlaps the white line`
+still press (j) when it overlaps the white line`
     ;
         }
     }
@@ -2943,16 +2943,17 @@ function SS_Instr_Load_InfoRoutineBegin(trials) {
     text3 = ``;
     if ((block_count === 1)) {
         ss_instr_text2 = `In the upcoming blocks,
-    the ball always starts in ${default_color_text}
-    and sometimes change to ${change_color_text}`
+the ball always starts in ${default_color_text}
+and sometimes change to ${change_color_text}`
     ;
     } else {
         if ((block_count === ((num_block / 2) + 1))) {
-            ss_instr_text2 = `Now the ball always starts in ${change_color_text} and occationally changes to ${default_color_text}`;
+            ss_instr_text2 = `Now the ball always starts in ${change_color_text} 
+and occationally changes to ${default_color_text}`;
         }
     }
     ss_instr_text1 = `Your job is to PRESS (j) when the ${go_color_text} ball overlaps the line
-    and DO NOT PRESS ANY KEY when the ${stop_color_text} ball overlaps the line`
+and DO NOT PRESS ANY KEY when the ${stop_color_text} ball overlaps the line`
     ;
     ss_instr_text3 = `Whenever you are ready, press (j) to start the task`;
     corr_score = 0;
