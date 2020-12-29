@@ -1654,13 +1654,10 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
     t = SS_Instr_PreTrialClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
-    console.log(t)
-    console.log(routineTimer.getTime())
-    size_ball_pretrial = (0 - ((size_ball / t_pretrial) * routineTimer.getTime()));
+    
     if (((trial_count_instr >= 11) && (Resp_SS_Instr_PreTrial.keys !== undefined))) {
       trials.finished =  true;
     }
-    
     
     // *Line_SS_Instr_PreTrial* updates
     if (t >= 0.0 && Line_SS_Instr_PreTrial.status === PsychoJS.Status.NOT_STARTED) {
@@ -1718,9 +1715,10 @@ function SS_Instr_PreTrialRoutineEachFrame(trials) {
       Ball_SS_Instr_PreTrial.setAutoDraw(false);
     }
     
+    size_ball_pretrial = (0 + ((size_ball / t_pretrial) * t));
+
     if (Ball_SS_Instr_PreTrial.status === PsychoJS.Status.STARTED){ // only update if being drawn
-      Ball_SS_Instr_PreTrial.setSize([(0 - ((size_ball / t_pretrial) * routineTimer.getTime())), (0 - ((size_ball / t_pretrial) * routineTimer.getTime()))]);
-      Line_SS_Instr_PreTrial.refresh()
+      Ball_SS_Instr_PreTrial.setSize([size_ball_pretrial, size_ball_pretrial]);
     }
     
     // *Text_1_SS_Instr_PreTrial* updates
@@ -2607,7 +2605,7 @@ function SS_Prac_PostTrialRoutineBegin(trials) {
     psychoJS.experiment.addData("session", session);
     trial_count = (trial_count + 1);
     if ((corr_score === num_prac_crit)) {
-        SS_Prac_Trial_Loop.finished = true;
+        trials.finished = true;
         block_count = (block_count + 1);
     }
     
