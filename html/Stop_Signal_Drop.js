@@ -232,8 +232,8 @@ function experimentInit() {
   sound_vol = 1;
   order = random();
   grp = 0;
-  if ((order < 0.5)) {
-      grp = 1;
+  if ((order < 1)) {
+      grp = 0;
   }
   color_rnd = random();
   go_color = [1, 1, 1];
