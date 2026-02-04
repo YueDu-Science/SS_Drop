@@ -238,7 +238,7 @@ function experimentInit() {
   color_rnd = random();
   go_color = [1, 1, 1];
   stop_color = [(- 1), (- 1), (- 1)];
-  if ((color_rnd < 0.5)) {
+  if ((color_rnd < 0)) {
       go_color = [(- 1), (- 1), (- 1)];
       stop_color = [1, 1, 1];
   }
